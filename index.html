@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>English → Meetei Mayek Wikipedia Translator</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>English → Meetei Mayek Translator (for Wikipedia)</h1>
+      <p class="muted">Fetch an English Wikipedia article, translate to Meetei (Meetei Mayek). Review before publishing.</p>
+    </header>
+
+    <section class="controls">
+      <label for="article">Wikipedia URL or Title</label>
+      <input id="article" placeholder="e.g. https://en.wikipedia.org/wiki/Albert_Einstein or Albert Einstein" />
+
+      <div class="row">
+        <select id="engine">
+          <option value="mint">MinT / AI4Bharat (example)</option>
+          <option value="google">Google Translate (via proxy)</option>
+        </select>
+
+        <button id="fetchBtn" class="btn primary">Fetch</button>
+        <button id="translateBtn" class="btn">Translate</button>
+        <button id="clearBtn" class="btn">Clear</button>
+      </div>
+
+      <div class="note">Check README for how to configure a translation endpoint. For GitHub Pages you must use a serverless function or an API that supports browser requests without private keys.</div>
+    </section>
+
+    <section>
+      <label for="source">Source (English plain text)</label>
+      <textarea id="source" placeholder="Fetched text will appear here..."></textarea>
+
+      <label for="translated">Translated (Meetei Mayek) text</label>
+      <textarea id="translated" placeholder="Translated output will appear here..."></textarea>
+
+      <div class="status-row">
+        <div class="progress"><div id="bar" style="width:0%"></div></div>
+        <div id="status">Idle</div>
+      </div>
+
+      <div class="row actions">
+        <button id="downloadBtn" class="btn">Download .txt</button>
+        <button id="copyBtn" class="btn">Copy</button>
+        <a id="help" href="#" class="muted">Publishing tips</a>
+      </div>
+    </section>
+
+    <footer class="foot muted">
+      <strong>Note:</strong> Use this tool only to help translate. Do not publish machine translation without reviewing and following Meetei Wikipedia community rules and attribution.
+    </footer>
+  </main>
+
+  <script src="assets/config.example.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
